@@ -4,6 +4,8 @@ import json
 http = urllib3.PoolManager()
 r = http.request('GET', 'http://192.168.0.104:8000/api/capitals/')
 print(r.data)
+print(r.status)
+print(r.headers)
 
 with open('json_data.json', 'w') as outfile:
     my_json = r.data.decode('utf8').replace("'", '"')
